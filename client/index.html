@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Collaborative Drawing Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>🎨 Collaborative Canvas</h1>
+                <div class="room-info">
+                    <span id="room-name">Room: default</span>
+                    <span class="separator">|</span>
+                    <span id="user-count">0 users online</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="connection-status" id="connection-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="tools-section">
+                    <h3>Drawing Tools</h3>
+                    
+                    <!-- Tool Selection -->
+                    <div class="tool-group">
+                        <label>Tool</label>
+                        <div class="tool-buttons">
+                            <button class="tool-btn active" data-tool="brush" title="Brush (B)">
+                                ✏️ Brush
+                            </button>
+                            <button class="tool-btn" data-tool="eraser" title="Eraser (E)">
+                                🧹 Eraser
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Color Picker -->
+                    <div class="tool-group">
+                        <label for="color-picker">Color</label>
+                        <div class="color-picker-container">
+                            <input type="color" id="color-picker" value="#000000">
+                            <div class="color-presets">
+                                <button class="color-preset" data-color="#000000" style="background: #000000"></button>
+                                <button class="color-preset" data-color="#FF0000" style="background: #FF0000"></button>
+                                <button class="color-preset" data-color="#00FF00" style="background: #00FF00"></button>
+                                <button class="color-preset" data-color="#0000FF" style="background: #0000FF"></button>
+                                <button class="color-preset" data-color="#FFFF00" style="background: #FFFF00"></button>
+                                <button class="color-preset" data-color="#FF00FF" style="background: #FF00FF"></button>
+                                <button class="color-preset" data-color="#00FFFF" style="background: #00FFFF"></button>
+                                <button class="color-preset" data-color="#FFFFFF" style="background: #FFFFFF; border: 1px solid #ccc;"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stroke Width -->
+                    <div class="tool-group">
+                        <label for="stroke-width">Stroke Width: <span id="stroke-width-value">5</span>px</label>
+                        <input type="range" id="stroke-width" min="1" max="50" value="5">
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="tool-group">
+                        <label>Actions</label>
+                        <div class="action-buttons">
+                            <button id="undo-btn" class="action-btn" title="Undo (Ctrl+Z)">
+                                ↶ Undo
+                            </button>
+                            <button id="clear-btn" class="action-btn" title="Clear Canvas">
+                                🗑️ Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Online Users -->
+                <div class="users-section">
+                    <h3>Online Users (<span id="user-count-sidebar">0</span>)</h3>
+                    <div id="users-list" class="users-list">
+                        <!-- User items will be added dynamically -->
+                    </div>
+                </div>
+
+                <!-- Performance Info -->
+                <div class="info-section">
+                    <h3>Performance</h3>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <span class="info-label">FPS:</span>
+                            <span id="fps-counter" class="info-value">60</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Operations:</span>
+                            <span id="operation-counter" class="info-value">0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Latency:</span>
+                            <span id="latency-counter" class="info-value">0ms</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Canvas Area -->
+            <main class="canvas-container">
+                <canvas id="canvas"></canvas>
+                <!-- Cursor indicators for other users -->
+                <div id="cursors-container"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="canvas.js"></script>
+    <script src="websocket.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
