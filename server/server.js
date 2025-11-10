@@ -12,10 +12,10 @@ const RoomManager = require('./rooms');
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"]
-  }
+    cors: {
+        origin: "*", // <-- THIS IS THE KEY LINE
+        methods: ["GET", "POST"]
+    }
 });
 
 const roomManager = new RoomManager();

@@ -2,7 +2,7 @@
  * Main Application
  * Initializes and coordinates all components
  */
-
+const BACKEND_URL = 'https://PLACEHOLDER-YOUR-RENDER-URL.onrender.com';
 // Global instances
 let canvasManager;
 let wsManager;
@@ -18,8 +18,7 @@ function init() {
   canvasManager = new CanvasManager(canvas);
   window.canvasManager = canvasManager;
   
-  // Initialize WebSocket
-  wsManager = new WebSocketManager();
+  wsManager = new WebSocketManager(BACKEND_URL); // <-- ADD BACKEND_URL HERE
   window.wsManager = wsManager;
   
   // Setup WebSocket callbacks
@@ -29,7 +28,7 @@ function init() {
   setupUIEventListeners();
   
   // Connect to server
-  wsManager.connect();
+wsManager.connect(); 
   
   console.log('[App] Application initialized');
 }
