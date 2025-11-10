@@ -19,14 +19,10 @@ const io = new Server(httpServer, {
 });
 
 const roomManager = new RoomManager();
-const PORT = process.env.PORT || 3000; 
-
-httpServer.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
 
 // Serve static files from client directory
-//app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 // Default route
 app.get('/', (req, res) => {
