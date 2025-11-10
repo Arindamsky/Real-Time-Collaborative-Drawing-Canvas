@@ -155,7 +155,7 @@ $env:PORT=8080; npm start
 - **WebSocket Transports**: WebSocket (primary), Polling (fallback)
 - **Reconnection**: Enabled with 5 attempts
 
-## 🐛 Known Limitations
+##  Known Limitations
 
 ### Current Limitations
 1. **No Redo Functionality**: Currently only supports undo, not redo
