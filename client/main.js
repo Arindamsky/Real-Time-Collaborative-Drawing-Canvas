@@ -2,7 +2,7 @@
  * Main Application
  * Initializes and coordinates all components
  */
-const BACKEND_URL = 'https://PLACEHOLDER-YOUR-RENDER-URL.onrender.com';
+const BACKEND_URL = 'https://real-time-collaborative-drawing-canvas-x18k.onrender.com/';
 // Global instances
 let canvasManager;
 let wsManager;
