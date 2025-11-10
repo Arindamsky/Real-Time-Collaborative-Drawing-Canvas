@@ -1,8 +1,8 @@
-# 🎨 Real-Time Collaborative Drawing Canvas
+#  Real-Time Collaborative Drawing Canvas
 
 A multi-user drawing application where multiple people can draw simultaneously on the same canvas with real-time synchronization using WebSockets.
 
-## 🚀 Features
+##  Features
 
 ### Core Functionality
 - **Real-time Drawing Synchronization**: See other users' drawings as they draw (stroke-by-stroke)
@@ -22,13 +22,13 @@ A multi-user drawing application where multiple people can draw simultaneously o
 - **Mobile Touch Support**: Works on touch devices
 - **Responsive Design**: Adapts to different screen sizes
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - **Node.js** >= 14.0.0
 - **npm** (comes with Node.js)
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -58,7 +58,7 @@ Open your browser and navigate to:
 http://localhost:3000
 ```
 
-## 🧪 Testing with Multiple Users
+##  Testing with Multiple Users
 
 ### Method 1: Multiple Browser Windows
 1. Open the application in your main browser window
@@ -83,7 +83,7 @@ http://localhost:3000
 3. Navigate to `http://localhost:3000` in both
 4. Each will be treated as a separate user
 
-## 🎮 How to Use
+##  How to Use
 
 ### Drawing Tools
 - **Brush Tool**: Click the "✏️ Brush" button or press `B`
@@ -114,7 +114,7 @@ http://localhost:3000
 - `E` - Switch to Eraser tool
 - `Ctrl+Z` / `Cmd+Z` - Undo last operation
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 collaborative-canvas/
@@ -133,7 +133,7 @@ collaborative-canvas/
 └── ARCHITECTURE.md         # Technical architecture documentation
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 You can customize the server port by setting the `PORT` environment variable:
@@ -174,16 +174,17 @@ $env:PORT=8080; npm start
 - Requires modern browser with Canvas API and WebSocket support
 - Mobile browser support is experimental
 
-## 🚧 Known Issues
+##  Known Issues
 
 1. **Canvas resize**: Resizing the browser window may cause slight visual artifacts
 2. **Network latency**: High latency (>200ms) may cause visible drawing lag
 3. **Touch devices**: Cursor indicators may not work properly on touch-only devices
 4. **Very fast drawing**: Extremely rapid strokes may skip points
+5. **Undo button** : Undo doesn't work everytime.
 
-## ⏱️ Development Time
+##  Development Time
 
-**Total Time Spent**: Approximately 8-10 hours
+**Total Time Spent**: Approximately 10-12 hours
 
 ### Time Breakdown
 - Architecture & Planning: 1 hour
@@ -194,7 +195,7 @@ $env:PORT=8080; npm start
 - Testing & Bug Fixes: 1 hour
 - Documentation: 1.5 hours
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 ### Planned Features
 - [ ] Redo functionality
@@ -217,7 +218,7 @@ $env:PORT=8080; npm start
 - [ ] Canvas thumbnail for room selection
 - [ ] Lazy loading of historical operations
 
-## 📚 Technologies Used
+##  Technologies Used
 
 ### Backend
 - **Node.js**: JavaScript runtime
@@ -230,15 +231,10 @@ $env:PORT=8080; npm start
 - **CSS3**: Styling and animations
 - **Socket.io Client**: WebSocket communication
 
-## 🤝 Contributing
 
-This is an assignment project. For the evaluation version, please see the submitted code.
 
-## 📝 License
 
-MIT License - Feel free to use this code for learning purposes.
-
-## 👤 Author
+##  Author
 
 Created as part of a technical assessment to demonstrate:
 - Canvas API mastery
@@ -247,37 +243,8 @@ Created as part of a technical assessment to demonstrate:
 - State synchronization
 - Clean code practices
 
-## 🆘 Troubleshooting
 
-### Server Won't Start
-- Check if port 3000 is already in use
-- Try a different port: `PORT=8080 npm start`
-- Ensure dependencies are installed: `npm install`
 
-### Cannot Connect to Server
-- Check if server is running
-- Verify firewall settings
-- Check browser console for errors
-
-### Drawing Lag
-- Check network latency (displayed in UI)
-- Reduce stroke width for better performance
-- Close other bandwidth-intensive applications
-
-### Canvas Not Visible
-- Check browser console for errors
-- Ensure JavaScript is enabled
-- Try a different browser
-- Clear browser cache
-
-## 📞 Support
-
-For issues or questions, please check:
-1. This README file
-2. ARCHITECTURE.md for technical details
-3. Browser console for error messages
-4. Network tab for WebSocket connection issues
 
 ---
 
-**Note**: This is a demonstration project showcasing real-time collaborative features. It's designed to show technical skills rather than production-ready software.
